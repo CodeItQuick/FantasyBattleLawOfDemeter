@@ -1,8 +1,8 @@
-import { Inventory } from '../src/Inventory';
-import { Stats } from '../src/Stats';
-import { SimpleEnemy } from '../src/SimpleEnemy';
-import { Player } from '../src/Player';
-import { Damage } from '../src/Damage';
+import {Inventory} from '../src/Inventory';
+import {Stats} from '../src/Stats';
+import {SimpleEnemy} from '../src/SimpleEnemy';
+import {Player} from '../src/Player';
+import {Damage} from '../src/Damage';
 
 describe('Player', () => {
 
