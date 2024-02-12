@@ -1,10 +1,10 @@
-import { Target } from './Target';
-import { Inventory } from './Inventory';
-import { Stats } from './Stats';
-import { Damage } from './Damage';
-import { SimpleEnemy } from './SimpleEnemy';
-import { Equipment } from './Equipment';
-import { Item } from './Item';
+import {Target} from './Target';
+import {Inventory} from './Inventory';
+import {Stats} from './Stats';
+import {Damage} from './Damage';
+import {SimpleEnemy} from './SimpleEnemy';
+import {Equipment} from './Equipment';
+import {Item} from './Item';
 
 export class Player extends Target {
     public constructor(private _inventory: Inventory, private _stats: Stats) {
@@ -38,12 +38,11 @@ export class Player extends Target {
     }
 
     private getDamageModifier(): number {
-        const equipment: Equipment = this._inventory.equipment;
-        const leftHand: Item = equipment.leftHand;
-        const rightHand: Item = equipment.rightHand;
-        const head: Item = equipment.head;
-        const feet: Item = equipment.feet;
-        const chest: Item = equipment.chest;
+        const leftHand: Item = this._inventory.equipment.leftHand;
+        const rightHand: Item = this._inventory.equipment.rightHand;
+        const head: Item = this._inventory.equipment.head;
+        const feet: Item = this._inventory.equipment.feet;
+        const chest: Item = this._inventory.equipment.chest;
         const strengthModifier: number = this._stats.strength * 0.1;
         return (
             strengthModifier +
@@ -55,14 +54,13 @@ export class Player extends Target {
         );
     }
 
+    // TODO: Calculate Base Damage -> move to equipment
     private getBaseDamage() {
-        const inventory: Inventory = this._inventory;
-        const equipment: Equipment = inventory.equipment;
-        const leftHand: Item = equipment.leftHand;
-        const rightHand: Item = equipment.rightHand;
-        const head: Item = equipment.head;
-        const feet: Item = equipment.feet;
-        const chest: Item = equipment.chest;
+        const leftHand: Item = this._inventory.equipment.leftHand;
+        const rightHand: Item = this._inventory.equipment.rightHand;
+        const head: Item = this._inventory.equipment.head;
+        const feet: Item = this._inventory.equipment.feet;
+        const chest: Item = this._inventory.equipment.chest;
         return (
             leftHand.baseDamage +
             rightHand.baseDamage +

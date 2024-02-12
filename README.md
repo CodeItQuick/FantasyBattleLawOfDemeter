@@ -41,3 +41,21 @@ Example equipment:
 | chest     |  breastplate of steel   |  0  | 1.4             |
 
 At present the only kind of enemy supported is a SimpleEnemy. This kind of target has one Buff with a soakModifier of 1.0 and damage modifier of 1.0. It wears an Armor with a Damage Soak of 5.
+
+CRC Cards
+Class,Responsibilities,Collaborators
+BasicBuff,Value Object (No Behaviour),
+Basic Item,Value Object (No Behaviour),
+Damage,Value Object (No Behaviour),
+Equipment,"CalculateBaseDamage()
+CalculateDamageModifier(strengthModifier: number)","Items, Simple Armor"
+Inventory,Know all its equipment pieces,Equipment
+Item,"CalculateBaseDamage
+Knows its Damage Modifier
+Knows how to calculate its total damage",
+Player,Can Calculate its Damage to Target,"Inventory, Stats"
+Simple Armor,"Knows how much damage it soaks up
+Knows its current buffs",
+Simple Enemy,"Knows its current health
+Knows its current buffs","Simple Armor, Buffs"
+Stats,Value Object (No Behaviour),

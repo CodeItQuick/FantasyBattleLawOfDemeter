@@ -1,0 +1,16 @@
+﻿Class,Responsibilities,Collaborators
+BasicBuff,Value Object (No Behaviour),
+Basic Item,Value Object (No Behaviour),
+Damage,Value Object (No Behaviour),
+Equipment,"CalculateBaseDamage()
+CalculateDamageModifier(strengthModifier: number)","Items, Simple Armor"
+Inventory,Know all its equipment pieces,Equipment
+Item,"CalculateBaseDamage
+Knows its Damage Modifier
+Knows how to calculate its total damage",
+Player,Can Calculate its Damage to Target,"Inventory, Stats"
+Simple Armor,"Knows how much damage it soaks up
+Knows its current buffs",
+Simple Enemy,"Knows its current health
+Knows its current buffs","Simple Armor, Buffs"
+Stats,Value Object (No Behaviour),
