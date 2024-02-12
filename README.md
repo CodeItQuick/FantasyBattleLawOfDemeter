@@ -4,6 +4,8 @@ See Wikipedia article for general description: https://en.wikipedia.org/wiki/Law
 Probably the reason for this article (Getters and Setters are evil): https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html
 Note: the above is not the original highly-influential article on the subject.
 
+Be sure to see the OOP Principle CQS.md file located in this directory for information on how to "solve" the code smell.
+
 Fantasy Battle Refactoring Kata
 ===============================
 
