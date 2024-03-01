@@ -10,6 +10,7 @@ export class BasicBuff implements Buff {
         return this._soak;
     }
 
+    // TODO: Remove Not Used
     public get damageModifier(): number {
         return this._damage;
     }

@@ -6,6 +6,7 @@ export class Damage {
         return this._amount;
     }
 
+    // TODO: Remove - Not Used
     public set amount(amount: number) {
         this._amount = amount;
     }
