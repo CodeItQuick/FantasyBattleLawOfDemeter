@@ -21,7 +21,7 @@ describe('Equipment', () => {
         { equipmentSlot: 'feet', baseDamage: [0, 0, 0, 21, 0], expectedTotalDamage: 21 },
         { equipmentSlot: 'chest', baseDamage: [0, 0, 0, 0, 17], expectedTotalDamage: 17 },
         { equipmentSlot: 'chest', baseDamage: [3, 7, 5, 13, 17], expectedTotalDamage: 45 },
-    ])('leftHandBaseDamage', ({ equipmentSlot, baseDamage, expectedTotalDamage}) => {
+    ])('calculateEquipmentDamage', ({ equipmentSlot, baseDamage, expectedTotalDamage}) => {
         it(`should return base damage for ${equipmentSlot}`, () => {
             const equipment = new Equipment(
                 new BasicItem('', baseDamage[0], 0),
