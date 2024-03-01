@@ -29,4 +29,12 @@ export class Equipment {
     public get chest(): Item {
         return this._chest;
     }
+
+    calculateEquipmentDamage() {
+        return this.leftHand.baseDamage +
+            this.rightHand.baseDamage +
+            this.head.baseDamage +
+            this.feet.baseDamage +
+            this.chest.baseDamage;
+    }
 }
