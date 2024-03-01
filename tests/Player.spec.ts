@@ -8,7 +8,7 @@ import {Buff} from "../src/Buff";
 import {BasicBuff} from "../src/BasicBuff";
 import {Equipment} from "../src/Equipment";
 import {BasicItem} from "../src/BasicItem";
-
+// 'test'
 describe('Player', () => {
 
     // TODO: test is not finished!
