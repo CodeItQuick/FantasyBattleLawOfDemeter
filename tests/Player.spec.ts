@@ -161,4 +161,21 @@ describe('Player', () => {
             .calculateDamage(enemy);
         expect(damage.amount).toBe(5);
     });
+
+    it('calculates damage with sword with 5 simple armor on Another player', () => {
+        const inventory = new Inventory(
+            new Equipment(
+                new BasicItem("Flash Sword of Danger", 12, 1),
+                new BasicItem("Shield", 0, 0),
+                new BasicItem("Helmet", 0, 0),
+                new BasicItem("Shoes", 0, 0),
+                new BasicItem("Chestplate", 0, 0)
+            ));
+        const stats = new Stats(0);
+        const anotherPlayer = new Player(inventory, stats)
+
+        const damage: Damage = new Player(inventory, stats)
+            .calculateDamage(anotherPlayer);
+        expect(damage.amount).toBe(2);
+    });
 })
