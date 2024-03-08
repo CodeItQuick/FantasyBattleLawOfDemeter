@@ -59,3 +59,6 @@ Knows its current buffs",
 Simple Enemy,"Knows its current health
 Knows its current buffs","Simple Armor, Buffs"
 Stats,Value Object (No Behaviour),
+
+
+

@@ -8,7 +8,7 @@ import {Buff} from "../src/Buff";
 import {BasicBuff} from "../src/BasicBuff";
 import {Equipment} from "../src/Equipment";
 import {BasicItem} from "../src/BasicItem";
-// 'test'
+
 describe('Player', () => {
 
     // TODO: test is not finished!
@@ -24,8 +24,8 @@ describe('Player', () => {
             ));
         const stats = new Stats(0);
         const enemy = new SimpleEnemy(
-            new SimpleArmor(5),
-            [new BasicBuff(1, 1)]);
+            new SimpleArmor(5), 
+        [new BasicBuff(1, 1)]);
 
         const damage: Damage = new Player(inventory, stats)
             .calculateDamage(enemy);
