@@ -43,5 +43,19 @@ describe('Inventory', () => {
 
             expect(damage).toBe(7);
         })
+        it('should ignore damageModifier when given a value', () => {
+            const equipment = new Equipment(
+                new BasicItem('', 11, 5),
+                new BasicItem('', 0, 0),
+                new BasicItem('', 0, 0),
+                new BasicItem('', 0, 0),
+                new BasicItem('', 0, 0));
+
+            const inventory = new Inventory(equipment);
+
+            const damage = inventory.calculatesEquipmentDamage();
+
+            expect(damage).toBe(11);
+        })
     });
 });
