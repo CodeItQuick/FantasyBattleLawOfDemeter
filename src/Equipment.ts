@@ -1,6 +1,29 @@
 import { Item } from './Item';
 
+enum equipmentSlot {
+  leftHand = 'leftHand',
+  rightHand = "rightHand",
+  head = "head",
+  feet = "feet",
+  chest = "chest"
+};
+
 export class Equipment {
+
+    private _items: {
+      [equipmentSlot.leftHand] : number,
+      [equipmentSlot.rightHand] : number,
+      [equipmentSlot.head] : number,
+      [equipmentSlot.feet] : number,
+      [equipmentSlot.chest] : number
+    } = {
+      [equipmentSlot.leftHand] : 0,
+      [equipmentSlot.rightHand] : 0,
+      [equipmentSlot.head] : 0,
+      [equipmentSlot.feet] : 0,
+      [equipmentSlot.chest] : 0
+    }
+
 
     // TODO add a ring item that may be equipped
     // that may also add damage modifier
