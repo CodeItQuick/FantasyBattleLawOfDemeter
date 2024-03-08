@@ -1,4 +1,12 @@
-﻿Law Of Demeter
+﻿
+// Legacy Something
+// New Cool Something
+// 1. Populate new cool something
+// 2. Slowly point old legacy something at new cool something
+// 3. Running tests
+// 4. Old legacy something is no longer used - delete it
+
+Law Of Demeter
 ===============================
 See Wikipedia article for general description: https://en.wikipedia.org/wiki/Law_of_Demeter
 Probably the reason for this article (Getters and Setters are evil): https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html

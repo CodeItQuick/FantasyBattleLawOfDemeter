@@ -1,4 +1,5 @@
 import { Item } from './Item';
+import {BasicItem} from "./BasicItem";
 
 enum equipmentSlot {
   leftHand = 'leftHand',
@@ -11,46 +12,49 @@ enum equipmentSlot {
 export class Equipment {
 
     private _items: {
-      [equipmentSlot.leftHand] : number,
-      [equipmentSlot.rightHand] : number,
-      [equipmentSlot.head] : number,
-      [equipmentSlot.feet] : number,
-      [equipmentSlot.chest] : number
+      [equipmentSlot.leftHand] : Item | undefined,
+      [equipmentSlot.rightHand] : Item | undefined,
+      [equipmentSlot.head] : Item | undefined,
+      [equipmentSlot.feet] : Item | undefined,
+      [equipmentSlot.chest] : Item | undefined
     } = {
-      [equipmentSlot.leftHand] : 0,
-      [equipmentSlot.rightHand] : 0,
-      [equipmentSlot.head] : 0,
-      [equipmentSlot.feet] : 0,
-      [equipmentSlot.chest] : 0
+      [equipmentSlot.leftHand] : undefined,
+      [equipmentSlot.rightHand] : undefined,
+      [equipmentSlot.head] : undefined,
+      [equipmentSlot.feet] : undefined,
+      [equipmentSlot.chest] : undefined
     }
 
-
-    // TODO add a ring item that may be equipped
-    // that may also add damage modifier
-    public constructor(private _leftHand: Item,
-                       private _rightHand: Item,
-                       private _head: Item,
-                       private _feet: Item,
-                       private _chest: Item) { }
+    public constructor(_leftHand: Item,
+                       _rightHand: Item,
+                       _head: Item,
+                       _feet: Item,
+                       _chest: Item) {
+        this._items[equipmentSlot.leftHand] = _leftHand;
+        this._items[equipmentSlot.rightHand] = _rightHand;
+        this._items[equipmentSlot.head] = _head;
+        this._items[equipmentSlot.feet] = _feet;
+        this._items[equipmentSlot.chest] = _chest;
+    }
 
     public get leftHand(): Item {
-        return this._leftHand;
+        return <Item>this._items[equipmentSlot.leftHand];
     }
 
     public get rightHand(): Item {
-        return this._rightHand;
+        return <Item>this._items[equipmentSlot.rightHand];
     }
 
     public get head(): Item {
-        return this._head;
+        return <Item>this._items[equipmentSlot.head];
     }
 
     public get feet(): Item {
-        return this._feet;
+        return <Item>this._items[equipmentSlot.feet]
     }
 
     public get chest(): Item {
-        return this._chest;
+        return <Item>this._items[equipmentSlot.chest]
     }
 
     calculateEquipmentDamage() {
