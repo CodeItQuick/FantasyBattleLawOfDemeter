@@ -1,5 +1,4 @@
-import { Item } from './Item';
-import {BasicItem} from "./BasicItem";
+import {Item} from './Item';
 
 enum equipmentSlot {
   leftHand = 'leftHand',
@@ -58,10 +57,8 @@ export class Equipment {
     }
 
     calculateEquipmentDamage() {
-        return this.leftHand.baseDamage +
-            this.rightHand.baseDamage +
-            this.head.baseDamage +
-            this.feet.baseDamage +
-            this.chest.baseDamage;
+        return Object.values(this._items)
+            .map(curr => curr?.baseDamage || 0)
+            .reduce((acc, curr) => acc + curr, 0)
     }
 }
