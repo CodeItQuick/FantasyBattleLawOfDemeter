@@ -57,5 +57,19 @@ describe('Inventory', () => {
 
             expect(damage).toBe(11);
         })
+        it('can calculate for all BasicItems', () => {
+            const equipment = new Equipment(
+                new BasicItem('', 11, 5),
+                new BasicItem('', 3, 1),
+                new BasicItem('', 7, 2),
+                new BasicItem('', 5, 3),
+                new BasicItem('', 1, 4));
+
+            const inventory = new Inventory(equipment);
+
+            const damage = inventory.calculatesEquipmentDamage();
+
+            expect(damage).toBe(27);
+        })
     });
 });
