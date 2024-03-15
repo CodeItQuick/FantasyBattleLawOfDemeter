@@ -1,3 +1,16 @@
+March 8th, 2024
+Observations
+1. Bogged down by "syntax stuff" - typescript?
+2. ZOMBIES
+3. Learned reduce - and to avoid using it
+4. Characterization tests for legacy code - don't project own opinions, just how does it currently work (have visibility)
+
+
+Learnings:
+1. Key smell "middleman" -> Single method calling a single other method, should that be there?
+
+March 1st, 2024
+
 Observations:
 
 Learnings:

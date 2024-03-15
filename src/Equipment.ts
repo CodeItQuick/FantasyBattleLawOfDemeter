@@ -56,7 +56,7 @@ export class Equipment {
         return <Item>this._items[equipmentSlot.chest]
     }
 
-    calculateEquipmentDamage() {
+    calculateEquipmentDamage(): number {
         return Object.values(this._items)
             .map(curr => curr?.baseDamage || 0)
             .reduce((acc, curr) => acc + curr, 0)
